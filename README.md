@@ -6,10 +6,11 @@
 
 #### Easy
 
-  - [Two Sum](https://leetcode.com/problems/two-sum/)  <font color="#00ffff">Done</font>
+  - [Two Sum](https://leetcode.com/problems/two-sum/)  <font color="00ffff">Done</font>
   - [Reverse Integer](https://leetcode.com/problems/reverse-integer)  <font color="#00ffff">Done</font>
   - [Palindrome Number](https://leetcode.com/problems/palindrome-number)  <font color="#00ffff">Done</font> 
   - [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix)  <font color="#00ffff">Done</font>
+  - [Valid Parentheses](https://leetcode.com/problems/valid-parentheses)  <font color="#00ffff">Done</font>
   - [Roman to Integer](https://leetcode.com/problems/roman-to-integer)  <font color="#DC143C">Doing...</font>
 
 #### Medium
