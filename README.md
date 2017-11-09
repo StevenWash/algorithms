@@ -15,7 +15,7 @@
 
 #### Medium
 
-  - [Add Two Numbers](https://leetcode.com/problems/add-two-numbers)  <font color="#DC143C">Doing...</font>
+  - [Add Two Numbers](https://leetcode.com/problems/add-two-numbers)  <font color="#DC143C">Done</font>
   
 
 
