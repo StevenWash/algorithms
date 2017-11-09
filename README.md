@@ -11,6 +11,8 @@
   - [Palindrome Number](https://leetcode.com/problems/palindrome-number)  <font color="#00ffff">Done</font> 
   - [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix)  <font color="#00ffff">Done</font>
   - [Valid Parentheses](https://leetcode.com/problems/valid-parentheses)  <font color="#00ffff">Done</font>
+  - [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)  Done
+  - [Remove Duplicates From Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)  Done
   - [Roman to Integer](https://leetcode.com/problems/roman-to-integer)  <font color="#DC143C">Doing...</font>
 
 #### Medium
