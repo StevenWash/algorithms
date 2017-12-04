@@ -34,3 +34,14 @@
 
   - [MatrixFindNums](https://gitee.com/HxSteve/algorithms/blob/master/offer/src/main/java/com/huaxin/offerproblems/MatrixFindNums.java)  <font color="#00ffff">Done</font>
   - [ReplaceAllBlankSpace](https://gitee.com/HxSteve/algorithms/blob/master/offer/src/main/java/com/huaxin/offerproblems/ReplaceAllBlankSpace.java)  <font color="#00ffff">Done</font>
+
+## bat 面试常用算法
+
+### 主要是根据牛客网左程云bat算法直通车的视频内容进行的
+
+  - [BinaryTreeSequence](https://gitee.com/HxSteve/algorithms/blob/master/batalgorithms/src/main/java/com/huaxin/binarytree/BinaryTreeSequence.java) 以先序为例，将一棵二叉树进行序列化和反序列化的操作
+  - [TravelBinaryTreeByLevel](https://gitee.com/HxSteve/algorithms/blob/master/batalgorithms/src/main/java/com/huaxin/binarytree/TravelBinaryTreeByLevel.java) 层次遍历一棵二叉树
+  - [FindSubString](https://gitee.com/HxSteve/algorithms/blob/master/batalgorithms/src/main/java/com/huaxin/string/FindSubString.java) 寻找一个字符串的子字符串，有常规的暴力解法，也有KMP的算法实现
+  - [RotateWord](https://gitee.com/HxSteve/algorithms/blob/master/batalgorithms/src/main/java/com/huaxin/string/RotateWord.java)判断两个字符串是不是旋转词，依据了KMP算法
+  - [ReverseWord](https://gitee.com/HxSteve/algorithms/blob/master/batalgorithms/src/main/java/com/huaxin/string/ReverseWord.java)将一个字符串进行逆序输出
+  - [ReverseStringExam]()几个字符串的常用操作：1、将一句话进行逆序输出 2、将一个字符串的某一位置前和后的字符串交换 3、以某种方法拼接字符串数组，使得最后的大字符串的字典顺序最小
