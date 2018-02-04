@@ -9,6 +9,8 @@
     <module>leetcode</module>
     <module>niuke</module>
     <module>offer</module>
+    <module>batalgorithms</module>
+    <module>typicalalgorithms</module>
   </modules>
   <packaging>pom</packaging>
 

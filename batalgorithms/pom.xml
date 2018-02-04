@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>niuke</artifactId>
+    <artifactId>batalgorithms</artifactId>
     <packaging>jar</packaging>
 
-    <name>niuke</name>
+    <name>batalgorithms</name>
     <url>http://maven.apache.org</url>
 
     <properties>
