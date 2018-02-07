@@ -4,7 +4,7 @@
  * Create by StevenWash (huaxin)
  */
 
-package com.huaxin.offer.offerproblems.unpass;
+package com.huaxin.offer.offerproblems;
 
 import com.huaxin.offer.common.TreeNode;
 
@@ -17,22 +17,33 @@ import com.huaxin.offer.common.TreeNode;
  */
 public class MirrorTree {
 
+    /**
+     * 解题思路：
+     *   1、首先在纸上画出镜像树的样子
+     *   2、遍历整棵树：
+     *         a、如果该节点不为叶子结点，则交换其左右子树
+     *         b、如果是叶子结点，则不进行操作
+     *         c、同样遍历当前节点的左子树和右子树
+     *
+     * @param root
+     */
     public static void Mirror(TreeNode root) {
-        if (root.left.left == null) {
-            int temp = root.left.val;
-            root.left.val = root.right.val;
-            root.right.val = temp;
+        if (root == null) {
             return;
         }
+        if (root.left != null || root.right != null) {
+            TreeNode treeNode = root.left;
+            root.left = root.right;
+            root.right = treeNode;
 
-        if (root.right == null) {
-            root.right = root.left;
-            root.left = null;
-            return;
         }
 
-        Mirror(root.left);
-        Mirror(root.right);
+        if (root.left != null) {
+            Mirror(root.left);
+        }
+        if (root.right != null) {
+            Mirror(root.right);
+        }
     }
 
 
