@@ -21,7 +21,7 @@ import java.util.Stack;
  */
 public class FindPath {
 
-    public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
+    public static ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
         ArrayList<ArrayList<Integer>> paths = new ArrayList<ArrayList<Integer>>();
         ArrayList<Integer> path = new ArrayList<Integer>();
 
@@ -36,11 +36,45 @@ public class FindPath {
             sum +=treeNode.val;
             path.add(treeNode.val);
 
+            if (treeNode.left == null && treeNode.right == null){
+                if (sum == target) {
+                    paths.add(path);
+                    break;
+                }
+            }
+            if (treeNode.left != null) {
+                FindPath(treeNode.left, target - sum);
+                sum -=treeNode.left.val;
+                path.remove(treeNode.left.val);
+            }
 
+            if (treeNode.right != null) {
+                FindPath(treeNode.left, target - sum);
+                sum -=treeNode.right.val;
+                path.remove(treeNode.right.val);
+            }
 
         }
 
         return paths;
+    }
+
+    public static void main(String[] args) {
+        TreeNode treeNode = new TreeNode(8);
+
+        TreeNode leftTree = new TreeNode(6);
+        TreeNode rightTree = new TreeNode(10);
+
+        treeNode.left = leftTree;
+        treeNode.right = rightTree;
+
+        leftTree.left = new TreeNode(5);
+        leftTree.right = new TreeNode(7);
+
+        rightTree.left = new TreeNode(9);
+        rightTree.right = new TreeNode(11);
+
+        FindPath(treeNode, 27);
     }
 
 }
