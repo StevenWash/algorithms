@@ -18,4 +18,10 @@ public class TreeNode {
     public TreeNode left;
     public TreeNode right;
     public TreeNode(int x) { val = x; }
+    public TreeNode() { val = 0; }
+    public TreeNode(TreeNode f) {
+        val = f.val;
+        left = f.left;
+        right = f.right;
+    }
 }

@@ -17,6 +17,14 @@ import com.huaxin.offer.common.TreeNode;
  */
 public class IsBalancedTree {
 
+    /**
+     * 思路：
+     *  1、首先获取左子树的高度和右子树的高度，如果左右子树的高度的差的绝对值小于等于1，则返回递归调用左子树和右子树的结果
+     *  2、如果大于1这返回false
+     *
+     * @param root
+     * @return
+     */
     public static boolean IsBalanced_Solution(TreeNode root) {
         if (root == null) {
             return true;

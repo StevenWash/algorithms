@@ -9,7 +9,11 @@ package com.huaxin.offer.offerproblems.unpass;
 import com.huaxin.offer.common.TreeNode;
 
 import java.util.ArrayList;
-import java.util.Stack;
+import java.util.Collections;
+import java.util.Hashtable;
+import java.util.Vector;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Description:
@@ -20,61 +24,76 @@ import java.util.Stack;
  * @create 2018/02/04 19:59
  */
 public class FindPath {
-
+    public static ArrayList<ArrayList<Integer>>  paths = new ArrayList<ArrayList<Integer>>();
+    public static ArrayList<Integer> path = new ArrayList<Integer>();
+    /**
+     * 思路：
+     *
+     *
+     * @param root
+     * @param target
+     * @return
+     */
     public static ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
-        ArrayList<ArrayList<Integer>> paths = new ArrayList<ArrayList<Integer>>();
-        ArrayList<Integer> path = new ArrayList<Integer>();
 
-        TreeNode treeNode;
-        int sum = 0;
-
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        stack.push(root);
-
-        while (!stack.empty()) {
-            treeNode = stack.pop();
-            sum +=treeNode.val;
-            path.add(treeNode.val);
-
-            if (treeNode.left == null && treeNode.right == null){
-                if (sum == target) {
-                    paths.add(path);
-                    break;
-                }
-            }
-            if (treeNode.left != null) {
-                FindPath(treeNode.left, target - sum);
-                sum -=treeNode.left.val;
-                path.remove(treeNode.left.val);
-            }
-
-            if (treeNode.right != null) {
-                FindPath(treeNode.left, target - sum);
-                sum -=treeNode.right.val;
-                path.remove(treeNode.right.val);
-            }
-
-        }
+        find(root, target);
 
         return paths;
     }
 
-    public static void main(String[] args) {
-        TreeNode treeNode = new TreeNode(8);
+    public static ArrayList<Integer> find(TreeNode tree, int target){
 
-        TreeNode leftTree = new TreeNode(6);
-        TreeNode rightTree = new TreeNode(10);
+        if (tree.val == target) {
+            path.add(tree.val);
+            paths.add(path);
+            path = new ArrayList<Integer>();
+        }
+
+        if (tree.val < target) {
+            path.add(tree.val);
+            target -= tree.val;
+
+            if (tree.left != null) {
+                path.addAll(find(tree.left, target));
+                if (path.size()>0) {
+                    path.remove(path.size()-1);
+                }
+            }
+
+            if (tree.right != null) {
+                path.addAll(find(tree.right, target));
+                if (path.size()>0) {
+                    path.remove(path.size()-1);
+                }
+            }
+
+        }
+
+        return new ArrayList<Integer>();
+    }
+
+    static class Test{
+        int a = 0;
+        int b = 3;
+    }
+
+
+    public static void main(String[] args) {
+        TreeNode treeNode = new TreeNode(10);
+
+        TreeNode leftTree = new TreeNode(5);
+        TreeNode rightTree = new TreeNode(12);
 
         treeNode.left = leftTree;
         treeNode.right = rightTree;
 
-        leftTree.left = new TreeNode(5);
+        leftTree.left = new TreeNode(4);
         leftTree.right = new TreeNode(7);
 
-        rightTree.left = new TreeNode(9);
-        rightTree.right = new TreeNode(11);
+//        rightTree.left = new TreeNode(9);
+//        rightTree.right = new TreeNode(11);
 
-        FindPath(treeNode, 27);
+        FindPath(treeNode, 22);
     }
 
 }
