@@ -6,7 +6,7 @@
 
 package com.huaxin.niuke.binarytree;
 
-import com.huaxin.niuke.common.MyBinaryTree;
+import com.huaxin.niuke.common.TreeNode;
 
 /**
  * 二叉树的序列化和反序列化
@@ -21,19 +21,25 @@ public class BinaryTreeSequence {
 
     /**
      * 将一棵二叉树通过先序遍历的方式进行序列化为一个字符串
+     *
+     * 思路：
+     *   1、首先规定用特殊字符"!" 表示一个数的结束，用特殊字符"#!"表示一个空值结束
+     *   2、先序遍历二叉树，如节点为空则在字符串的末尾加上"#!"，否则就是节点值+"!"
+     *   3、然后递归调用
+     *
      * @param binaryTree
      * @return 序列化之后的字符串
      */
-    public static String encodeToString(MyBinaryTree binaryTree) {
+    public static String encodeToString(TreeNode binaryTree) {
         StringBuffer str = new StringBuffer();
         if (binaryTree!=null) {
-            str.append(binaryTree.value+"!");
+            str.append(binaryTree.val+"!");
         }else {
             return "#!";
         }
 
-        str.append(encodeToString(binaryTree.leftChild));
-        str.append(encodeToString(binaryTree.rightChild));
+        str.append(encodeToString(binaryTree.left));
+        str.append(encodeToString(binaryTree.right));
 
         return str.toString();
     }
@@ -43,7 +49,7 @@ public class BinaryTreeSequence {
      * @param treeStr
      * @return
      */
-    public static MyBinaryTree decodeToBinaryTree(String treeStr) {
+    public static TreeNode decodeToBinaryTree(String treeStr) {
         String splitStr = "#";
         if (index > treeStr.length()) {
             index = 0;
@@ -56,29 +62,29 @@ public class BinaryTreeSequence {
             index++;
             return null;
         }
-        MyBinaryTree binaryTree = new MyBinaryTree(Integer.parseInt(values[index]));
+        TreeNode binaryTree = new TreeNode(Integer.parseInt(values[index]));
         index++;
-        binaryTree.leftChild = decodeToBinaryTree(treeStr);
-        binaryTree.rightChild = decodeToBinaryTree(treeStr);
+        binaryTree.left = decodeToBinaryTree(treeStr);
+        binaryTree.right = decodeToBinaryTree(treeStr);
 
         return binaryTree;
     }
 
     public static void main(String[] args) {
-        MyBinaryTree myBinaryTree = new MyBinaryTree(1);
-        MyBinaryTree tempTree = myBinaryTree;
-        tempTree.leftChild = new MyBinaryTree(2);
-        tempTree.rightChild = new MyBinaryTree(3);
-        tempTree = tempTree.leftChild;
-        tempTree.leftChild = new MyBinaryTree(4);
-        tempTree = myBinaryTree.rightChild;
-        tempTree.leftChild = new MyBinaryTree(5);
-        tempTree.rightChild = new MyBinaryTree(6);
-        tempTree = tempTree.leftChild;
-        tempTree.leftChild = new MyBinaryTree(7);
-        tempTree.rightChild = new MyBinaryTree(8);
+        TreeNode treeNode = new TreeNode(1);
+        TreeNode tempTree = treeNode;
+        tempTree.left = new TreeNode(2);
+        tempTree.right = new TreeNode(3);
+        tempTree = tempTree.left;
+        tempTree.left = new TreeNode(4);
+        tempTree = treeNode.right;
+        tempTree.left = new TreeNode(5);
+        tempTree.right = new TreeNode(6);
+        tempTree = tempTree.left;
+        tempTree.left = new TreeNode(7);
+        tempTree.right = new TreeNode(8);
 
-        String str = encodeToString(myBinaryTree);
+        String str = encodeToString(treeNode);
 
         System.out.println(str);
 

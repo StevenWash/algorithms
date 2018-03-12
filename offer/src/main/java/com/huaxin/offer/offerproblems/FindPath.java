@@ -4,16 +4,11 @@
  * Create by StevenWash (huaxin)
  */
 
-package com.huaxin.offer.offerproblems.unpass;
+package com.huaxin.offer.offerproblems;
 
 import com.huaxin.offer.common.TreeNode;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Hashtable;
-import java.util.Vector;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Description:
@@ -41,42 +36,38 @@ public class FindPath {
         return paths;
     }
 
-    public static ArrayList<Integer> find(TreeNode tree, int target){
+    public static void find(TreeNode tree, int target){
 
-        if (tree.val == target) {
-            path.add(tree.val);
-            paths.add(path);
-            path = new ArrayList<Integer>();
+        if (tree == null ){
+            return;
+        }
+
+        path.add(tree.val);
+        if (tree.val == target && tree.left == null && tree.right == null) {
+
+
+            ArrayList list = new ArrayList();
+
+            for (int i = 0; i < path.size(); i++) {
+                list.add(path.get(i));
+            }
+
+            paths.add(list);
+            return ;
         }
 
         if (tree.val < target) {
-            path.add(tree.val);
-            target -= tree.val;
-
+            find(tree.left, target - tree.val);
             if (tree.left != null) {
-                path.addAll(find(tree.left, target));
-                if (path.size()>0) {
-                    path.remove(path.size()-1);
-                }
+                path.remove(new Integer(tree.left.val));
             }
 
+            find(tree.right, target - tree.val);
             if (tree.right != null) {
-                path.addAll(find(tree.right, target));
-                if (path.size()>0) {
-                    path.remove(path.size()-1);
-                }
+                path.remove(new Integer(tree.right.val));
             }
-
         }
-
-        return new ArrayList<Integer>();
     }
-
-    static class Test{
-        int a = 0;
-        int b = 3;
-    }
-
 
     public static void main(String[] args) {
         TreeNode treeNode = new TreeNode(10);
@@ -93,7 +84,7 @@ public class FindPath {
 //        rightTree.left = new TreeNode(9);
 //        rightTree.right = new TreeNode(11);
 
-        FindPath(treeNode, 22);
+        FindPath(treeNode, 15);
     }
 
 }

@@ -6,7 +6,7 @@
 
 package com.huaxin.niuke.binarytree;
 
-import com.huaxin.niuke.common.MyBinaryTree;
+import com.huaxin.niuke.common.TreeNode;
 
 import java.util.ArrayList;
 
@@ -23,31 +23,31 @@ public class TravelBinaryTreeByLevel {
      * nlast:记录下一行的最后一个节点
      * @param binaryTree
      */
-    public static void travel(MyBinaryTree binaryTree) {
-        MyBinaryTree [] queue = new MyBinaryTree[20];
+    public static void travel(TreeNode binaryTree) {
+        TreeNode[] queue = new TreeNode[20];
         int font=0, rear=0;
-        MyBinaryTree last, nlast = null;
+        TreeNode last, nlast = null;
         last = binaryTree;
         queue[rear++] = binaryTree;
 
         while(font!=rear) {
-            MyBinaryTree temp = queue[font++];
-            System.out.print(temp.value);
+            TreeNode temp = queue[font++];
+            System.out.print(temp.val);
 
-            if(temp.leftChild != null) {
-                queue[rear++] = temp.leftChild;
-                nlast = temp.leftChild;
+            if(temp.left != null) {
+                queue[rear++] = temp.left;
+                nlast = temp.left;
             }
-            if(temp.rightChild != null) {
-                queue[rear++] = temp.rightChild;
-                nlast = temp.rightChild;
+            if(temp.right != null) {
+                queue[rear++] = temp.right;
+                nlast = temp.right;
             }
             /**
              * 此时说明遍历的结点已经到了当前层的最右边结点
              * 1、先换行，便是当前行结束
              * 2、然后姜当前的last修改为下一行的最后边的节点
              */
-            if (temp.value == last.value) {
+            if (temp.val == last.val) {
                 System.out.println();
                 last = nlast;
             }
@@ -55,15 +55,15 @@ public class TravelBinaryTreeByLevel {
     }
 
     /**
-     * 将一棵二叉树以层次遍历的儿方式，将每行的结果存在数组中并返回
+     * 将一棵二叉树以层次遍历的方式，将每行的结果存在数组中并返回
      * @param root
      * @return
      */
-    public static int[][] printTree(MyBinaryTree root) {
+    public static int[][] printTree(TreeNode root) {
         // write code here
         //int[][] nodes = new int [8][8];
-        MyBinaryTree[] queue = new MyBinaryTree[500];
-        MyBinaryTree last, nlast = null;
+        TreeNode[] queue = new TreeNode[500];
+        TreeNode last, nlast = null;
 
         ArrayList<ArrayList<Integer>> lists = new ArrayList<ArrayList<Integer>>();
         ArrayList<Integer> list = new ArrayList<Integer>();
@@ -72,17 +72,17 @@ public class TravelBinaryTreeByLevel {
         queue[rear++] = root;
 
         while(font!=rear) {
-            MyBinaryTree temp = queue[font++];
-            list.add(temp.value);
-            if(temp.leftChild != null){
-                queue[rear++] = temp.leftChild;
-                nlast = temp.leftChild;
+            TreeNode temp = queue[font++];
+            list.add(temp.val);
+            if(temp.left != null){
+                queue[rear++] = temp.left;
+                nlast = temp.left;
             }
-            if(temp.rightChild != null){
-                queue[rear++] = temp.rightChild;
-                nlast = temp.rightChild;
+            if(temp.right != null){
+                queue[rear++] = temp.right;
+                nlast = temp.right;
             }
-            if(last.value == temp.value) {
+            if(last.val == temp.val) {
                 lists.add(list);
                 list = new ArrayList<Integer>();
                 last = nlast;
@@ -101,22 +101,22 @@ public class TravelBinaryTreeByLevel {
     }
 
     public static void main(String[] args) {
-        MyBinaryTree myBinaryTree = new MyBinaryTree(1);
-        MyBinaryTree tempTree = myBinaryTree;
-        tempTree.leftChild = new MyBinaryTree(2);
-        tempTree.rightChild = new MyBinaryTree(3);
-        tempTree = tempTree.leftChild;
-        tempTree.leftChild = new MyBinaryTree(4);
-        tempTree = myBinaryTree.rightChild;
-        tempTree.leftChild = new MyBinaryTree(5);
-        tempTree.rightChild = new MyBinaryTree(6);
-        tempTree = tempTree.leftChild;
-        tempTree.leftChild = new MyBinaryTree(7);
-        tempTree.rightChild = new MyBinaryTree(8);
+        TreeNode treeNode = new TreeNode(1);
+        TreeNode tempTree = treeNode;
+        tempTree.left = new TreeNode(2);
+        tempTree.right = new TreeNode(3);
+        tempTree = tempTree.left;
+        tempTree.left = new TreeNode(4);
+        tempTree = treeNode.right;
+        tempTree.left = new TreeNode(5);
+        tempTree.right = new TreeNode(6);
+        tempTree = tempTree.left;
+        tempTree.left = new TreeNode(7);
+        tempTree.right = new TreeNode(8);
 
-        travel(myBinaryTree);
+        travel(treeNode);
 
-        int [][] a=printTree(myBinaryTree);
+        int [][] a=printTree(treeNode);
 
     }
 }
