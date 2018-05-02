@@ -120,7 +120,6 @@ public class FindSubString {
         }
 
         return next;
-
     }
 
     /**
@@ -150,7 +149,7 @@ public class FindSubString {
 
     public static void main(String[] args) {
         String str1 = "BBC ABCDAB ABCDABCDABDE";
-        String str2 = "ABCDABD";
+        String str2 = "BBC ABCDAB ABCDABCDABDE";
         System.out.println(indexSubString2(str1, str2));
 
         String str4 = "BBC ABCDAB ABCDABCDABDE";

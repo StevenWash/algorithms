@@ -82,6 +82,12 @@ public class QuickSort {
 
     /**
      * 实现快速排序的方法
+     *
+     * 时间复杂度：最好O(nlogn),最差O(n^2)
+     * 空间复杂度：O(logn)  因为有递归，借助栈实现
+     *
+     * 不稳定算法 ：因为在最后交换的partition的值和i最后的位置的时候，有可能出现不稳定
+     *
      * @param arrs
      * @return
      */

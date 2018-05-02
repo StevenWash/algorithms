@@ -10,11 +10,15 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
+public class AppTest extends TestCase
 {
     /**
      * Create the test case
@@ -40,5 +44,10 @@ public class AppTest
     public void testApp()
     {
         assertTrue( true );
+    }
+
+    public static void main(String[] args) {
+        boolean t = 2 < 10 | true;
+        System.out.println(t);
     }
 }

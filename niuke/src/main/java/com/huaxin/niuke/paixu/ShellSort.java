@@ -29,6 +29,10 @@ public class ShellSort {
      *    1、实际上while里面的两个for循环就是一个插入排序的过程，只不过增加的步数是N而不是1
      *    2、增量N还可以有其他的很多方式表达
      *
+     * 时间复杂度：O(nlogn)
+     * 空间复杂度：O(1)
+     *
+     * 不稳定性算法
      * @param arrs
      * @return
      */

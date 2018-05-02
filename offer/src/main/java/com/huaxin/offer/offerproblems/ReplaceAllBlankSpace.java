@@ -46,7 +46,6 @@ public class ReplaceAllBlankSpace {
 
         }
 
-
         StringBuffer s=new StringBuffer();
         for(int m=0;m< srcStr.length()-cnt*repStr.length();m++){
             s.append(srcS[m]);

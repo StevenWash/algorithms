@@ -61,7 +61,7 @@ public class CountSort {
 
         //3、更新桶数组中的值：每个值等于自身值加上前一个元素的值
         for (i = 1; i < k; i++) {
-            targetArrs[i] += targetArrs[i-1];
+            targetArrs[i] += targetArrs[i-1];//此时的targetArrs[i]表示i元素在这个桶中排第几
         }
 
         //4、将arrs中的元素倒序放在arrs1中

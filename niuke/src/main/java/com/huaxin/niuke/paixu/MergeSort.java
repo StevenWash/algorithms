@@ -68,6 +68,12 @@ public class MergeSort {
 
     /**
      * 主体的归并算法的入口
+     *
+     * 时间复杂度：O(nlogn)
+     * 空间复杂度：O(n)
+     *
+     * 稳定性算法
+     *
      * @param arrs
      * @return
      */

@@ -14,6 +14,12 @@ public class BubbleSort {
 
     /**
      * 实现冒泡排序，思路非常简单，直接两遍循环即可
+     *
+     * 时间复杂度：O(n^2)
+     * 空间复杂度：O(1)
+     *
+     * 稳定性排序算法
+     *
      * @param src
      * @return
      */

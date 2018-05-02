@@ -38,7 +38,7 @@ public class TreeToSequence {
         result[1] = change(list);
         list.clear();
 
-        lastOrder(root, list);
+        lastOrder2(root, list);
         result[2] = change(list);
 
         return result;
@@ -107,7 +107,7 @@ public class TreeToSequence {
             node = stack.pop();
             if (node != null) {
                 list.add(node.val);
-                node = node.right;
+                node = node.right;//因为是中序遍历，所以的那个访问完node节点之后，接下来没放问的就是node节点的右孩子
             }
         }
     }
@@ -133,6 +133,28 @@ public class TreeToSequence {
                 list.add(cur.val);
             }
         }
+    }
+
+    /**
+     * 非递归遍历树的后序：只用一个栈实现
+     * @param root
+     * @param list
+     */
+    public static void lastOrder2(TreeNode root, ArrayList list) {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        order(root, stack);
+        while (!stack.empty()) {
+            list.add(stack.pop().val);
+        }
+    }
+
+    public static void order(TreeNode tree, Stack<TreeNode> stack) {
+        if (tree == null) {
+            return;
+        }
+        stack.push(tree);
+        order(tree.right, stack);
+        order(tree.left, stack);
     }
 
     public static void main(String[] args) {
