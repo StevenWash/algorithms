@@ -1,4 +1,4 @@
-# algorithms
+# algorithms-cpp
 
 ## leetcode
 
