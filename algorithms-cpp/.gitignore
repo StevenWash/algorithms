@@ -1,0 +1,6 @@
+# Visual Studio Code project settings
+.vscode
+
+.idea
+
+cmake-build-debug
