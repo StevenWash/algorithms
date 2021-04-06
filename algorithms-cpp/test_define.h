@@ -20,4 +20,6 @@ void test_remove_element();
 
 void test_search_insert();
 
+void test_lengthOfLongestSubstring();
+
 #endif //ALGORITHM_CPP_TEST_DEFINE_H

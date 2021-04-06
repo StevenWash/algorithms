@@ -3,6 +3,11 @@
 //
 
 
+#include <vector>
+#include <iostream>
+
+using namespace std;
+
 /**
  * 删除排序数组中的重复项
  *
@@ -48,12 +53,6 @@ for (int i = 0; i < len; i++) {
 
  *
  */
-
-using namespace std;
-
-#include <vector>
-#include <iostream>
-
 class RemoveDupValues {
 
 public:

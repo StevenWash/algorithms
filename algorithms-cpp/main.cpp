@@ -15,7 +15,9 @@ int main() {
 
 //    test_remove_element();
 
-    test_search_insert();
+//    test_search_insert();
+
+    test_lengthOfLongestSubstring();
 
     return 0;
 }
