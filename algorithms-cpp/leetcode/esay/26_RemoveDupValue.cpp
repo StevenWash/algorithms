@@ -83,7 +83,7 @@ public:
 
 };
 
-void test_remove_duplicates() {
+void test_26_remove_duplicates() {
 
     RemoveDupValues removeDupValues;
 

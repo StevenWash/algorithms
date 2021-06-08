@@ -72,7 +72,7 @@ public:
     }
 };
 
-void test_reverse_integer() {
+void test_7_reverse_integer() {
     ReverseInteger ri;
     int result = ri.reverse(-2147483648);
 //    int result = stoi("153423646999999");

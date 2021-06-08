@@ -113,7 +113,7 @@ public:
 
 };
 
-void test_merge_sorted_linked_list() {
+void test_21_merge_sorted_linked_list() {
     MergeSortedLinkedList merge;
 
     ListNode * l1 = new ListNode(2);

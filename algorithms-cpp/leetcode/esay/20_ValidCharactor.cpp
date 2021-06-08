@@ -84,7 +84,7 @@ public:
     }
 };
 
-void test_valid_character() {
+void test_20_valid_character() {
     ValidCharacter valid;
     std::cout << "result:" << valid.isValid("[[(({}[[]]{()}))]]") << std::endl;
 }

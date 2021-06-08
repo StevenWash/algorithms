@@ -74,7 +74,7 @@ public:
 };
 
 // 测试用例
-void test_add_sum() {
+void test_1_add_sum() {
     AddSum addSum;
     std::vector<int>obj;
     obj.push_back(2);

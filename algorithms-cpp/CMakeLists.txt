@@ -1,7 +1,19 @@
 cmake_minimum_required(VERSION 3.15)
-project(algorithm_cpp)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 11)
+set(PROJECT_NAME algorithm_cpp)
 
+project(${PROJECT_NAME})
 
-add_executable(algorithm_cpp main.cpp leetcode/esay/1_AddSum.cpp test_define.h leetcode/middle/3_LongestSubStrNoRepeat.cpp leetcode/esay/7_ReverseInteger.cpp leetcode/esay/20_ValidCharactor.cpp leetcode/esay/21_MergeSortedLinkedList.cpp leetcode/common/ListNode.cpp leetcode/common/ListNode.h leetcode/esay/26_RemoveDupValue.cpp leetcode/esay/27_RemoveValue.cpp leetcode/esay/35_SearchInsert.cpp)
+aux_source_directory(. DIR_SRCS)
+message("DIR_SRCS: " ${DIR_SRCS})
+
+add_subdirectory(./leetcode)
+
+add_executable(${PROJECT_NAME} ${DIR_SRCS})
+
+set(PROJECT_LINK_LIBS
+        leetcode
+        )
+
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LINK_LIBS})

@@ -62,7 +62,7 @@ public:
 };
 
 
-void test_remove_element() {
+void test_27_remove_element() {
 
     vector<int> nums;
     nums.push_back(3);

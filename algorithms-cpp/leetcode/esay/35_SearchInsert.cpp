@@ -66,7 +66,7 @@ public:
 
 };
 
-void test_search_insert() {
+void test_35_search_insert() {
 
     vector<int> nums;
     nums.push_back(1);

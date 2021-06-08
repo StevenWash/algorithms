@@ -72,9 +72,9 @@ public:
     }
 };
 
-void test_lengthOfLongestSubstring() {
+void test_3_length_of_longest_substring() {
 
-    string s = "bbbbb";
+    string s = "bbqwebe2e123tebb";
     LongestSubstrNoRepeat longestSubstrNoRepeat;
     int width = longestSubstrNoRepeat.lengthOfLongestSubstring(s);
     cout << width << endl;
