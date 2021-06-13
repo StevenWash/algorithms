@@ -23,7 +23,7 @@
 
 #include <iostream>
 #include <algorithm>
-#include "../common/TreeNode.h.bak"
+#include "../common/TreeNode.h"
 
 using namespace std;
 
