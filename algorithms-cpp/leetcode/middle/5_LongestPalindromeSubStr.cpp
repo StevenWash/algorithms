@@ -63,15 +63,14 @@ public:
                     // 注意： c++中substr的第二个参数是子串的长度，不是其他语言中子串的结束位置
                     ans = s.substr(i, j-i+1);
                 }
-
             }
-
         }
 
         return ans;
     }
 };
 
+// pass
 void test_longestPalindrome() {
 
     string s = "babad";

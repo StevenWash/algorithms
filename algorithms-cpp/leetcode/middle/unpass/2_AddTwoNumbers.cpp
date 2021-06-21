@@ -34,7 +34,7 @@
 
  */
 
-#include "../common/ListNode.h"
+#include "../../common/ListNode.h"
 
 class AddTwoNumbers {
 

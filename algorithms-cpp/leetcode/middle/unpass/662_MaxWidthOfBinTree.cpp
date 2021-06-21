@@ -2,7 +2,7 @@
 // Created by stevenhua on 2021/6/1.
 //
 
-#include "../common/TreeNode.h"
+#include "../../common/TreeNode.h"
 #include <vector>
 #include <cmath>
 

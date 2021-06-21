@@ -53,7 +53,7 @@ public:
             if (flag) {
                 width++;
             } else {
-                i += width;
+                i++;
             }
         }
 
@@ -71,6 +71,7 @@ public:
     }
 };
 
+// pass
 void test_3_length_of_longest_substring() {
 
     string s = "bbqwebe2e123tebb";

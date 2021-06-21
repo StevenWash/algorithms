@@ -8,9 +8,9 @@
 
 void leetcode_main() {
 
-    leetcode_easy_main();
+//    leetcode_easy_main();
 
-//    leetcode_middle_main();
+    leetcode_middle_main();
 //
 //    leetcode_hard_main();
 }

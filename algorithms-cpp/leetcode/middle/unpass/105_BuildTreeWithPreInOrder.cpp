@@ -10,7 +10,7 @@
 
 #include <map>
 #include <vector>
-#include "../common/TreeNode.h"
+#include "../../common/TreeNode.h"
 
 using namespace std;
 

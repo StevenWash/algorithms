@@ -43,35 +43,60 @@
 
 #include <iostream>
 #include <vector>
+#include <stack>
 #include "../common/TreeNode.h"
 
 using namespace std;
 
 class BinTreeInorderTraversal {
 public:
+
+    // 迭代的方法实现
+    // 思路： 模拟中序遍历的过程，先不断的把当前节点的左孩子节点入栈，直到最左边的叶子节点
+    //       然后出栈当前栈顶的元素（即最左边的叶子节点），遍历该节点的值，
+    //       然后用同样的方式遍历该节点的右子树
+    vector<int> inorderTraversal2(TreeNode* root) {
+        vector<int> res;
+        stack<TreeNode*> stack;
+
+        while(root != nullptr || !stack.empty()) {
+            while(root != nullptr) {
+                stack.push(root);
+                root = root->left;
+            }
+
+            root = stack.top();
+            stack.pop();
+            res.push_back(root->val);
+            root = root->right;
+        }
+
+        return res;
+    }
+
+
+    // 递归的方法实现
     vector<int> inorderTraversal(TreeNode* root) {
 
         vector<int> res;
-        inorderTraversal(root, &res);
+        traversal(root, &res);
 
         return res;
-
     }
 
-    void inorderTraversal(TreeNode* root, vector<int> *res) {
-
+    void traversal(TreeNode* root, vector<int> *res) {
         if (root == NULL) {
             return;
         }
 
-        inorderTraversal(root->left, res);
+        traversal(root->left, res);
         res->push_back(root->val);
-        inorderTraversal(root->right, res);
-
+        traversal(root->right, res);
     }
 };
 
-void test_inorderTraversal() {
+// pass
+void test_94_inorder_traversal() {
 
     BinTreeInorderTraversal binTreeInorderTraversal;
 
@@ -100,6 +125,29 @@ void test_inorderTraversal() {
     treeNode.left = &t1;
     treeNode.right = &t2;
 
-    binTreeInorderTraversal.inorderTraversal(&treeNode);
+    auto res1 = binTreeInorderTraversal.inorderTraversal(&treeNode);
+    for (auto val: res1) {
+        std::cout << val << " ";
+    }
+    std::cout << std::endl;
+
+    TreeNode tree2;
+    tree2.val = 1;
+
+    TreeNode t6;
+    t6.val = 2;
+
+    TreeNode t7;
+    t7.val = 3;
+
+    t6.left = &t7;
+
+    tree2.right = &t6;
+
+    auto res2 = binTreeInorderTraversal.inorderTraversal2(&tree2);
+    for (auto val: res2) {
+        std::cout << val << " ";
+    }
+    std::cout << std::endl;
 
 }
